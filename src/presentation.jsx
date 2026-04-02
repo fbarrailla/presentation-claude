@@ -12,7 +12,7 @@ import {
 import exampleWebsiteImg from './assets/example-website.jpg';
 import exampleJohnVideo from './assets/example-john.mp4';
 import ebookImg from './assets/ebook.png';
-import ebookPdf from './assets/ebook.pdf?url';
+import ebookPdf from './assets/ebook-20260402155748.pdf?url';
 
 // ─── Theme ────────────────────────────────────────────────────────────────────
 const theme = {
@@ -113,15 +113,15 @@ function Tag({ children, color = '#e8a030' }) {
   );
 }
 
-function Bullet({ children, accent = false }) {
+function Bullet({ children, accent = false, marginBottom = '18px', fontSize = '22px' }) {
   return (
-    <FlexBox alignItems="flex-start" marginBottom="18px">
+    <FlexBox alignItems="flex-start" marginBottom={marginBottom}>
       <Box
         style={{
           color: accent ? '#e8a030' : '#c45c2a',
           fontFamily: "'Syne', sans-serif",
-          fontSize: '20px',
-          marginRight: '14px',
+          fontSize: '18px',
+          marginRight: '12px',
           marginTop: '2px',
           flexShrink: 0,
         }}
@@ -131,9 +131,9 @@ function Bullet({ children, accent = false }) {
       <Text
         style={{
           fontFamily: "'Syne', sans-serif",
-          fontSize: '22px',
+          fontSize,
           color: '#f5f0e8',
-          lineHeight: 1.5,
+          lineHeight: 1.4,
           margin: 0,
         }}
       >
@@ -143,9 +143,9 @@ function Bullet({ children, accent = false }) {
   );
 }
 
-function SectionHeading({ children }) {
+function SectionHeading({ children, marginBottom = '48px', fontSize = '52px' }) {
   return (
-    <Box marginBottom="48px">
+    <Box marginBottom={marginBottom}>
       <Box
         style={{
           fontFamily: "'Syne', sans-serif",
@@ -160,7 +160,7 @@ function SectionHeading({ children }) {
         ── ── ──
       </Box>
       <Heading
-        fontSize="52px"
+        fontSize={fontSize}
         style={{
           fontFamily: "'Instrument Serif', serif",
           fontWeight: 400,
@@ -856,22 +856,22 @@ function ImpeccableIntroSlide() {
       <SlideLabel>07 / Impeccable</SlideLabel>
       <FlexBox height="100%" alignItems="center">
         {/* Left column */}
-        <Box flex="1.1" paddingRight="60px">
-          <SectionHeading>Build with Impeccable</SectionHeading>
+        <Box flex="1.1" paddingRight="48px">
+          <SectionHeading marginBottom="20px" fontSize="40px">Build with Impeccable</SectionHeading>
           <Appear>
-            <Bullet accent>A curated set of Claude Code skills for frontend design quality</Bullet>
+            <Bullet accent marginBottom="10px" fontSize="18px">A curated set of Claude Code skills for frontend design quality</Bullet>
           </Appear>
           <Appear>
-            <Bullet>Type <span style={{ fontFamily: 'JetBrains Mono, monospace', color: '#8b5cf6', fontSize: '18px' }}>/skill-name</span> — Claude becomes a design specialist</Bullet>
+            <Bullet marginBottom="10px" fontSize="18px">Type <span style={{ fontFamily: 'JetBrains Mono, monospace', color: '#8b5cf6', fontSize: '16px' }}>/skill-name</span> — Claude becomes a design specialist</Bullet>
           </Appear>
           <Appear>
-            <Bullet accent>Each skill has deep domain knowledge baked in</Bullet>
+            <Bullet accent marginBottom="10px" fontSize="18px">Each skill has deep domain knowledge baked in</Bullet>
           </Appear>
           <Appear>
-            <Bullet>Works on any stack — React, Vue, plain HTML, Tailwind, CSS…</Bullet>
+            <Bullet marginBottom="10px" fontSize="18px">Works on any stack — React, Vue, plain HTML, Tailwind, CSS…</Bullet>
           </Appear>
           <Appear>
-            <Bullet accent>Stack them: create → refine → polish → ship</Bullet>
+            <Bullet accent marginBottom="10px" fontSize="18px">Stack them: create → refine → polish → ship</Bullet>
           </Appear>
         </Box>
 
@@ -899,28 +899,28 @@ function ImpeccableIntroSlide() {
                   ~ my-project
                 </Text>
               </FlexBox>
-              <Box padding="24px">
-                <Text style={{ fontFamily: 'JetBrains Mono', fontSize: 14, color: '#5a9e6f', margin: '0 0 8px' }}>
+              <Box padding="16px 20px">
+                <Text style={{ fontFamily: 'JetBrains Mono', fontSize: 13, color: '#5a9e6f', margin: '0 0 6px' }}>
                   $ claude
                 </Text>
-                <Text style={{ fontFamily: 'JetBrains Mono', fontSize: 14, color: '#e8a030', margin: '0 0 16px' }}>
+                <Text style={{ fontFamily: 'JetBrains Mono', fontSize: 13, color: '#e8a030', margin: '0 0 10px' }}>
                   &gt; /frontend-design
                 </Text>
-                <Text style={{ fontFamily: 'JetBrains Mono', fontSize: 13, color: '#9d9488', margin: '0 0 16px', lineHeight: 1.6 }}>
+                <Text style={{ fontFamily: 'JetBrains Mono', fontSize: 12, color: '#9d9488', margin: '0 0 10px', lineHeight: 1.5 }}>
                   ✓ Design specialist mode active<br />
                   Analyzing your project…
                 </Text>
-                <Text style={{ fontFamily: 'JetBrains Mono', fontSize: 14, color: '#e8a030', margin: '0 0 16px' }}>
+                <Text style={{ fontFamily: 'JetBrains Mono', fontSize: 13, color: '#e8a030', margin: '0 0 10px' }}>
                   &gt; /animate
                 </Text>
-                <Text style={{ fontFamily: 'JetBrains Mono', fontSize: 13, color: '#9d9488', margin: '0 0 16px', lineHeight: 1.6 }}>
+                <Text style={{ fontFamily: 'JetBrains Mono', fontSize: 12, color: '#9d9488', margin: '0 0 10px', lineHeight: 1.5 }}>
                   ✓ Reviewing interactions…<br />
                   Adding spring physics to modal…
                 </Text>
-                <Text style={{ fontFamily: 'JetBrains Mono', fontSize: 14, color: '#e8a030', margin: '0 0 16px' }}>
+                <Text style={{ fontFamily: 'JetBrains Mono', fontSize: 13, color: '#e8a030', margin: '0 0 10px' }}>
                   &gt; /polish
                 </Text>
-                <Text style={{ fontFamily: 'JetBrains Mono', fontSize: 13, color: '#5a9e6f', margin: 0, lineHeight: 1.6 }}>
+                <Text style={{ fontFamily: 'JetBrains Mono', fontSize: 12, color: '#5a9e6f', margin: 0, lineHeight: 1.5 }}>
                   ✓ Alignment, spacing & details fixed<br />
                   Ready to ship.
                 </Text>
@@ -940,21 +940,21 @@ function ImpeccableExampleSlide() {
       <FlexBox height="100%" alignItems="center">
         {/* Left column */}
         <Box flex="1" paddingRight="48px">
-          <SectionHeading>Live Example</SectionHeading>
+          <SectionHeading marginBottom="20px" fontSize="40px">Live Example</SectionHeading>
           <Appear>
-            <Bullet accent>Built entirely with Claude Code</Bullet>
+            <Bullet accent marginBottom="10px" fontSize="18px">Built entirely with Claude Code</Bullet>
           </Appear>
           <Appear>
-            <Bullet>Started from a plain prompt — no design file</Bullet>
+            <Bullet marginBottom="10px" fontSize="18px">Started from a plain prompt — no design file</Bullet>
           </Appear>
           <Appear>
-            <Bullet accent><span style={{ fontFamily: 'JetBrains Mono, monospace', color: '#8b5cf6', fontSize: '18px' }}>/frontend-design</span> for the initial build</Bullet>
+            <Bullet accent marginBottom="10px" fontSize="18px"><span style={{ fontFamily: 'JetBrains Mono, monospace', color: '#8b5cf6', fontSize: '16px' }}>/frontend-design</span> for the initial build</Bullet>
           </Appear>
           <Appear>
-            <Bullet><span style={{ fontFamily: 'JetBrains Mono, monospace', color: '#e8a030', fontSize: '18px' }}>/animate</span> for micro-interactions</Bullet>
+            <Bullet marginBottom="10px" fontSize="18px"><span style={{ fontFamily: 'JetBrains Mono, monospace', color: '#e8a030', fontSize: '16px' }}>/animate</span> for micro-interactions</Bullet>
           </Appear>
           <Appear>
-            <Bullet accent><span style={{ fontFamily: 'JetBrains Mono, monospace', color: '#5a9e6f', fontSize: '18px' }}>/polish</span> for the final details</Bullet>
+            <Bullet accent marginBottom="10px" fontSize="18px"><span style={{ fontFamily: 'JetBrains Mono, monospace', color: '#5a9e6f', fontSize: '16px' }}>/polish</span> for the final details</Bullet>
           </Appear>
         </Box>
 
